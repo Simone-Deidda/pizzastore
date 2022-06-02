@@ -48,11 +48,10 @@ public class Pizza {
 	public Pizza() {
 	}
 
-	public Pizza(String nome, String descrizione, String ingredienti, Integer prezzoBase) {
+	public Pizza(String nome, String descrizione, String ingredienti) {
 		this.nome = nome;
 		this.descrizione = descrizione;
 		this.ingredienti = ingredienti;
-		this.prezzoBase = prezzoBase;
 		this.attivo = true;
 	}
 
