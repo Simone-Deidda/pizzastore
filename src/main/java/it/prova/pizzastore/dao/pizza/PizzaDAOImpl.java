@@ -13,7 +13,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import it.prova.pizzastore.model.Pizza;
 
-public class PizzaDAOImpl implements PizzaDOA {
+public class PizzaDAOImpl implements PizzaDAO {
 	private EntityManager entityManager;
 
 	@Override
