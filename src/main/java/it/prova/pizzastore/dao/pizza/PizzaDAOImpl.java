@@ -62,7 +62,7 @@ public class PizzaDAOImpl implements PizzaDAO {
 		Map<String, Object> paramaterMap = new HashMap<String, Object>();
 		List<String> whereClauses = new ArrayList<String>();
 
-		StringBuilder queryBuilder = new StringBuilder("select p from Pizza p where p.id = p.id ");
+		StringBuilder queryBuilder = new StringBuilder("select p from Pizza p where p.attivo = 1 ");
 
 		if (StringUtils.isNotEmpty(example.getDescrizione())) {
 			whereClauses.add(" p.descrizione  like :descrizione ");
