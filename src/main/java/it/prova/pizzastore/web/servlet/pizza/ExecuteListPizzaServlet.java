@@ -32,7 +32,6 @@ public class ExecuteListPizzaServlet extends HttpServlet {
 			return;
 		}
 
-		// andiamo ai risultati
 		request.getRequestDispatcher("/pizza/list.jsp").forward(request, response);
 	}
 
