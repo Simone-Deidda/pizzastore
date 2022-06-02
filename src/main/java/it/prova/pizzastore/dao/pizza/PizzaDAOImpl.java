@@ -18,7 +18,7 @@ public class PizzaDAOImpl implements PizzaDAO {
 
 	@Override
 	public List<Pizza> list() throws Exception {
-		return entityManager.createQuery("from Pizza", Pizza.class).getResultList();
+		return entityManager.createQuery("from Pizza p where p.attivo = 1", Pizza.class).getResultList();
 	}
 
 	@Override
@@ -48,7 +48,8 @@ public class PizzaDAOImpl implements PizzaDAO {
 		if (input == null) {
 			throw new Exception("Problema valore in input");
 		}
-		entityManager.remove(entityManager.merge(input));
+		input.setAttivo(false);
+		entityManager.merge(input);
 	}
 
 	@Override
