@@ -1,6 +1,6 @@
 package it.prova.pizzastore.dao;
 
-import it.prova.pizzastore.model.Ruolo;
+import it.prova.pizzastore.model.auth.Ruolo;
 
 public interface RuoloDAO extends IBaseDAO<Ruolo> {
 

@@ -6,8 +6,8 @@ import java.util.Optional;
 import javax.persistence.EntityManager;
 
 import it.prova.pizzastore.dao.UtenteDAO;
-import it.prova.pizzastore.model.Ruolo;
-import it.prova.pizzastore.model.Utente;
+import it.prova.pizzastore.model.auth.Ruolo;
+import it.prova.pizzastore.model.auth.Utente;
 import it.prova.pizzastore.web.listener.LocalEntityManagerFactoryListener;
 
 
@@ -113,7 +113,22 @@ public class UtenteServiceImpl implements UtenteService {
 
 	@Override
 	public void rimuovi(Utente utenteInstance) throws Exception {
-		// TODO Auto-generated method stub
+		EntityManager entityManager = LocalEntityManagerFactoryListener.getEntityManager();
+
+		try {
+			entityManager.getTransaction().begin();
+
+			utenteDAO.setEntityManager(entityManager);
+			utenteDAO.delete(utenteInstance);
+
+			entityManager.getTransaction().commit();
+		} catch (Exception e) {
+			entityManager.getTransaction().rollback();
+			e.printStackTrace();
+			throw e;
+		} finally {
+			LocalEntityManagerFactoryListener.closeEntityManager(entityManager);
+		}
 
 	}
 

@@ -6,9 +6,9 @@ import java.util.Optional;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import it.prova.pizzastore.model.Ruolo;
-import it.prova.pizzastore.model.StatoUtente;
-import it.prova.pizzastore.model.Utente;
+import it.prova.pizzastore.model.auth.Ruolo;
+import it.prova.pizzastore.model.auth.StatoUtente;
+import it.prova.pizzastore.model.auth.Utente;
 
 
 public class UtenteDAOImpl implements UtenteDAO {
@@ -21,8 +21,6 @@ public class UtenteDAOImpl implements UtenteDAO {
 
 	@Override
 	public List<Utente> list() throws Exception {
-		// dopo la from bisogna specificare il nome dell'oggetto (lettera maiuscola) e
-		// non la tabella
 		return entityManager.createQuery("from Utente", Utente.class).getResultList();
 	}
 
@@ -57,8 +55,6 @@ public class UtenteDAOImpl implements UtenteDAO {
 		entityManager.remove(entityManager.merge(utenteInstance));
 	}
 
-	// questo metodo ci torna utile per capire se possiamo rimuovere un ruolo non
-	// essendo collegato ad un utente
 	public List<Utente> findAllByRuolo(Ruolo ruoloInput) throws Exception {
 		TypedQuery<Utente> query = entityManager.createQuery("select u FROM Utente u join u.ruoli r where r = :ruolo",
 				Utente.class);

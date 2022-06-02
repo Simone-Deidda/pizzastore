@@ -10,9 +10,9 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
 
-import it.prova.pizzastore.model.Ruolo;
-import it.prova.pizzastore.model.StatoUtente;
-import it.prova.pizzastore.model.Utente;
+import it.prova.pizzastore.model.auth.Ruolo;
+import it.prova.pizzastore.model.auth.StatoUtente;
+import it.prova.pizzastore.model.auth.Utente;
 import it.prova.pizzastore.service.MyServiceFactory;
 import it.prova.pizzastore.service.RuoloService;
 import it.prova.pizzastore.service.UtenteService;
@@ -31,10 +31,10 @@ public class LocalEntityManagerFactoryListener implements ServletContextListener
 
 	public void contextInitialized(ServletContextEvent sce) {
 		try {
-			entityManagerFactory = Persistence.createEntityManagerFactory("raccoltafilm_unit");
+			entityManagerFactory = Persistence.createEntityManagerFactory("pizzastore_unit");
 			// questa chiamata viene fatta qui per semplicità ma in genere è meglio trovare
 			// altri modi per fare init
-			initAdminUserAndRuoli();
+			initUsersAndRuoli();
 		} catch (Throwable ex) {
 			System.err.println("Initial SessionFactory creation failed." + ex);
 			throw new ExceptionInInitializerError(ex);
@@ -63,7 +63,7 @@ public class LocalEntityManagerFactoryListener implements ServletContextListener
 		}
 	}
 
-	private void initAdminUserAndRuoli() throws Exception {
+	private void initUsersAndRuoli() throws Exception {
 		RuoloService ruoloServiceInstance = MyServiceFactory.getRuoloServiceInstance();
 		UtenteService utenteServiceInstance = MyServiceFactory.getUtenteServiceInstance();
 
@@ -75,12 +75,32 @@ public class LocalEntityManagerFactoryListener implements ServletContextListener
 			ruoloServiceInstance.inserisciNuovo(new Ruolo("Pizzaiolo User", "PIZZAIOLO_ROLE"));
 		}
 		
+		if (ruoloServiceInstance.cercaPerDescrizioneECodice("Fattorino User", "FATTORINO_ROLE") == null) {
+			ruoloServiceInstance.inserisciNuovo(new Ruolo("Fattorino User", "FATTORINO_ROLE"));
+		}
+		
 		if (utenteServiceInstance.findByUsernameAndPassword("admin", "admin") == null) {
-			Utente admin = new Utente("admin", "admin", "Mario", "Rossi", new Date());
+			Utente admin = new Utente("admin", "admin", "Giucas", "Casella", new Date());
 			admin.setStato(StatoUtente.ATTIVO);
 			utenteServiceInstance.inserisciNuovo(admin);
 			utenteServiceInstance.aggiungiRuolo(admin,
 					ruoloServiceInstance.cercaPerDescrizioneECodice("Administrator", "ADMIN_ROLE"));
+		}
+		
+		if (utenteServiceInstance.findByUsernameAndPassword("pizzaiolo", "pizz") == null) {
+			Utente admin = new Utente("pizzaiolo", "pizz", "Gerry", "Scotti", new Date());
+			admin.setStato(StatoUtente.ATTIVO);
+			utenteServiceInstance.inserisciNuovo(admin);
+			utenteServiceInstance.aggiungiRuolo(admin,
+					ruoloServiceInstance.cercaPerDescrizioneECodice("Pizzaiolo User", "PIZZAIOLO_ROLE"));
+		}
+		
+		if (utenteServiceInstance.findByUsernameAndPassword("fattorino", "fatt") == null) {
+			Utente admin = new Utente("fattorino", "fatt", "Carlo", "Conti", new Date());
+			admin.setStato(StatoUtente.ATTIVO);
+			utenteServiceInstance.inserisciNuovo(admin);
+			utenteServiceInstance.aggiungiRuolo(admin,
+					ruoloServiceInstance.cercaPerDescrizioneECodice("Fattorino User", "FATTORINO_ROLE"));
 		}
 	}
 

@@ -1,4 +1,4 @@
-package it.prova.pizzastore.model;
+package it.prova.pizzastore.model.auth;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

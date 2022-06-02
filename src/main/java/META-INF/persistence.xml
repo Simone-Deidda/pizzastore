@@ -6,8 +6,11 @@
         version="2.2">
 	<persistence-unit name="pizzastore_unit" transaction-type="RESOURCE_LOCAL">
 		 
-		<class>it.prova.pizzastore.model.Utente</class>
-		<class>it.prova.pizzastore.model.Ruolo</class>
+		<class>it.prova.pizzastore.model.auth.Utente</class>
+		<class>it.prova.pizzastore.model.auth.Ruolo</class>
+		<class>it.prova.pizzastore.model.Pizza</class>
+		<class>it.prova.pizzastore.model.Ordine</class>
+		<class>it.prova.pizzastore.model.Cliente</class>
 		
 		<properties>
 			<!-- setup con MySql -->
@@ -21,7 +24,7 @@
 			
 			<property name="hibernate.show_sql" value="true"/>
 			<!-- create-drop,create,update,validate -->
-			<property name="hibernate.hbm2ddl.auto" value=""/>
+			<property name="hibernate.hbm2ddl.auto" value="create"/>
 		</properties>
 	</persistence-unit>
 </persistence>

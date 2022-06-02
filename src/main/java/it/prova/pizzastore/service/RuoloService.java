@@ -3,7 +3,7 @@ package it.prova.pizzastore.service;
 import java.util.List;
 
 import it.prova.pizzastore.dao.RuoloDAO;
-import it.prova.pizzastore.model.Ruolo;
+import it.prova.pizzastore.model.auth.Ruolo;
 
 public interface RuoloService {
 	public List<Ruolo> listAll() throws Exception;

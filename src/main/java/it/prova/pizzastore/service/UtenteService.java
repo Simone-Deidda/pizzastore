@@ -3,8 +3,8 @@ package it.prova.pizzastore.service;
 import java.util.List;
 
 import it.prova.pizzastore.dao.UtenteDAO;
-import it.prova.pizzastore.model.Ruolo;
-import it.prova.pizzastore.model.Utente;
+import it.prova.pizzastore.model.auth.Ruolo;
+import it.prova.pizzastore.model.auth.Utente;
 
 public interface UtenteService {
 

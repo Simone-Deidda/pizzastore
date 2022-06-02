@@ -1,4 +1,4 @@
-package it.prova.pizzastore.model;
+package it.prova.pizzastore.model.auth;
 
 import java.util.Date;
 import java.util.HashSet;
@@ -8,13 +8,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import it.prova.pizzastore.model.Ordine;
 
 @Entity
 @Table(name = "utente")
@@ -38,6 +42,8 @@ public class Utente {
 	@Enumerated(EnumType.STRING)
 	private StatoUtente stato = StatoUtente.CREATO;
 
+	@OneToMany(fetch = FetchType.LAZY, mappedBy = "utente")
+	private Set<Ordine> ordini = new HashSet<Ordine>(0);
 	@ManyToMany
 	@JoinTable(name = "utente_ruolo", joinColumns = @JoinColumn(name = "utente_id", referencedColumnName = "ID"), inverseJoinColumns = @JoinColumn(name = "ruolo_id", referencedColumnName = "ID"))
 	private Set<Ruolo> ruoli = new HashSet<>(0);
