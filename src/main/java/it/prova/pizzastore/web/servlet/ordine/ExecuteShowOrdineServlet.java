@@ -39,7 +39,8 @@ public class ExecuteShowOrdineServlet extends HttpServlet {
 				return;
 			}
 
-			request.setAttribute("show_ordine_attr", new Ordine());
+			request.setAttribute("pizze_from_ordine_attr", ordineInstance.getPizze());
+			request.setAttribute("show_ordine_attr", ordineInstance);
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");

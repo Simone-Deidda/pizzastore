@@ -42,12 +42,8 @@
 							  <dd class="col-sm-9"><fmt:formatDate type = "date" value = "${show_ordine_attr.data}" /></dd>
 					    	</dl>
 					    	
-					    	<dl class="row">
-							  <dt class="col-sm-3 text-right">Status:</dt>
-							  <dd class="col-sm-9">${show_ordine_attr.closed==1? 'Chiuso':'Aperto'}</dd>
-					    	</dl>
 					    	
-					    	<!-- info Regista -->
+					    	<!-- info Cliente -->
 					    	<p>
 							  <a class="btn btn-primary btn-sm" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
 							    Info Cliente
@@ -69,42 +65,8 @@
 							   	</dl>
 							    
 							  </div>
-							<!-- end info Regista -->
+							<!-- end info Cliente -->
 							
-							<!-- info Pizze -->
-					    	<p>
-							  <a class="btn btn-primary btn-sm" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-							    Info Pizze
-							  </a>
-							</p>
-							<div class="collapse" id="collapseExample">
-							
-							<c:forEach items="show_ordine_attr.pizze" var="pizzaItem">
-							  <div class="card card-body">
-							  	<dl class="row">
-								  <dt class="col-sm-3 text-right">Nome:</dt>
-								  <dd class="col-sm-9">${pizzaItem.nome}</dd>
-							   	</dl>
-							   	<dl class="row">
-								  <dt class="col-sm-3 text-right">Descrizione:</dt>
-								  <dd class="col-sm-9">${pizzaItem.descrizione}</dd>
-							   	</dl>
-							   	<dl class="row">
-								  <dt class="col-sm-3 text-right">Ingredienti:</dt>
-								  <dd class="col-sm-9">${pizzaItem.ingredienti}</dd>
-							   	</dl>
-							   	<dl class="row">
-								  <dt class="col-sm-3 text-right">Prezzo Base:</dt>
-								  <dd class="col-sm-9">${pizzaItem.prezzoBase}</dd>
-							   	</dl>
-							    
-							  </div>
-							  </c:forEach>
-							   
-							  
-							  
-							<!-- end info Pizze -->
-							</div>
 					    	
 					    <!-- end card body -->
 					    </div>
