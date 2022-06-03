@@ -56,7 +56,7 @@
 											<td>${clienteItem.cognome }</td>
 											<td>${clienteItem.indirizzo }</td>
 											<td>
-												<a class="btn  btn-sm btn-outline-secondary" href="#?idCliente=${clienteItem.id }">Visualizza</a>
+												<a class="btn  btn-sm btn-outline-secondary" href="ExecuteShowClienteServlet?idCliente=${clienteItem.id }">Visualizza</a>
 												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="#?idCliente=${clienteItem.id}">Edit</a>
 												<a class="btn btn-outline-danger btn-sm" href="#?idCliente=${clienteItem.id }">Delete</a>
 											</td>

@@ -1,4 +1,4 @@
-package it.prova.pizzastore.web.servlet.pizza;
+package it.prova.pizzastore.web.servlet.cliente;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,35 +9,35 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.math.NumberUtils;
 
-import it.prova.pizzastore.model.Pizza;
+import it.prova.pizzastore.model.Cliente;
 import it.prova.pizzastore.service.MyServiceFactory;
 
-@WebServlet("/ExecuteShowPizzaServlet")
-public class ExecuteShowPizzaServlet extends HttpServlet {
+@WebServlet("/ExecuteShowClienteServlet")
+public class ExecuteShowClienteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String idPizzaParam = request.getParameter("idPizza");
-		if (!NumberUtils.isCreatable(idPizzaParam)) {
+		String idClienteParam = request.getParameter("idCliente");
+		if (!NumberUtils.isCreatable(idClienteParam)) {
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
 			request.getRequestDispatcher("home").forward(request, response);
 			return;
 		}
 
 		try {
-			Pizza pizzaInstance = MyServiceFactory.getPizzaServiceInstance()
-					.caricaSingoloElemento(Long.parseLong(idPizzaParam));
+			Cliente clienteInstance = MyServiceFactory.getClienteServiceInstance()
+					.caricaSingoloElemento(Long.parseLong(idClienteParam));
 
-			if (pizzaInstance == null) {
+			if (clienteInstance == null) {
 				request.setAttribute("errorMessage", "Elemento non trovato.");
-				request.getRequestDispatcher("ExecuteListPizzaServlet?operationResult=NOT_FOUND").forward(request,
+				request.getRequestDispatcher("ExecuteListClienteServlet?operationResult=NOT_FOUND").forward(request,
 						response);
 				return;
 			}
 
-			request.setAttribute("show_pizza_attr", pizzaInstance);
+			request.setAttribute("show_cliente_attr", clienteInstance);
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
@@ -45,7 +45,7 @@ public class ExecuteShowPizzaServlet extends HttpServlet {
 			return;
 		}
 
-		request.getRequestDispatcher("/pizza/show.jsp").forward(request, response);
+		request.getRequestDispatcher("/cliente/show.jsp").forward(request, response);
 	}
 
 }
