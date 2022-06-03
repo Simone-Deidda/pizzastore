@@ -25,7 +25,7 @@
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareInsertPizzaServlet">Inserisci Pizza</a></li>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareSearchClienteServlet">Ricerca Cliente</a></li>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareInsertClienteServlet">Inserisci Cliente</a></li>
-              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/#">Ricerca Ordine</a></li>
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareSearchOrdineServlet">Ricerca Ordine</a></li>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareInsertOrdineServlet">Inserisci Ordine</a></li>
             </ul> 
           </li>   
