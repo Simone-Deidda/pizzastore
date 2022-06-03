@@ -150,4 +150,20 @@ public class OrdineServiceImpl implements OrdineService {
 		}
 	}
 
+	@Override
+	public Ordine caricaSingoloElementoEager(long parseLong) {
+		EntityManager entityManager = LocalEntityManagerFactoryListener.getEntityManager();
+
+		try {
+			ordineDAO.setEntityManager(entityManager);
+			return ordineDAO.findOneEager(parseLong).orElse(null);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			throw e;
+		} finally {
+			LocalEntityManagerFactoryListener.closeEntityManager(entityManager);
+		}
+	}
+
 }

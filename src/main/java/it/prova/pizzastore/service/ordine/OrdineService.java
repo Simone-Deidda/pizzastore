@@ -24,4 +24,6 @@ public interface OrdineService {
 	// per injection
 	public void setOrdineDAO(OrdineDAO ordineDAO);
 
+	public Ordine caricaSingoloElementoEager(long parseLong);
+
 }

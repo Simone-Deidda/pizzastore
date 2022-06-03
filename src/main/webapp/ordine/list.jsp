@@ -56,9 +56,11 @@
 											<td><fmt:formatDate type = "date" value = "${ordineItem.data}" /></td>
 											<td>${ordineItem.costoTotaleOrdine }</td>
 											<td>
-												<a class="btn  btn-sm btn-outline-secondary" href="ExecuteShowClienteServlet?idCliente=${ordineItem.id }">Visualizza</a>
-												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="PrepareUpdateClienteServlet?idCliente=${ordineItem.id}">Edit</a>
-												<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteClienteServlet?idCliente=${ordineItem.id }">Delete</a>
+											 
+											
+												<a class="btn  btn-sm btn-outline-secondary" href="ExecuteShowOrdineServlet?idOrdine=${ordineItem.id }">Visualizza</a>
+												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="PrepareUpdateOrdineServlet?idOrdine=${ordineItem.id}">Edit</a>
+												<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteOrdineServlet?idOrdine=${ordineItem.id }">Delete</a>
 											</td>
 										</tr>
 									</c:forEach>

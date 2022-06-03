@@ -106,4 +106,10 @@ public class OrdineDAOImpl implements OrdineDAO {
 		return typedQuery.setParameter("codice", ordineInstance.getCodice()).getSingleResult().intValue();
 	}
 
+	@Override
+	public Optional<Ordine> findOneEager(long parseLong) {
+		return entityManager.createQuery("from Ordine o left join fetch o.cliente left join fetch o.pizze p where o.id=:idOrdine", Ordine.class)
+				.setParameter("idOrdine", parseLong).getResultList().stream().findFirst();
+	}
+
 }
