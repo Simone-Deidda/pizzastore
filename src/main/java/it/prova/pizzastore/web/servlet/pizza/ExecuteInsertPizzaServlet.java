@@ -33,6 +33,7 @@ public class ExecuteInsertPizzaServlet extends HttpServlet {
 		
 		try {
 			MyServiceFactory.getPizzaServiceInstance().inserisciNuovo(pizzaToBeInserted);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");

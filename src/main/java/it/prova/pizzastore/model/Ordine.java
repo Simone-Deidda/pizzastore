@@ -34,7 +34,7 @@ public class Ordine {
 	@Column(name = "codice")
 	private String codice;
 	@Column(name = "costoTotaleOrdine")
-	private Integer costoTotaleOrdine;
+	private Integer costoTotaleOrdine = 0;
 	@Column(name = "data")
 	private Date data;
 	@Column(name = "cloded")
@@ -52,18 +52,30 @@ public class Ordine {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "utente_id", nullable = false)
 	private Utente utente;
-	@ManyToMany(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.LAZY)
+	@ManyToMany(cascade = { CascadeType.MERGE, CascadeType.PERSIST }, fetch = FetchType.LAZY)
 	@JoinTable(name = "pizza_ordine", joinColumns = @JoinColumn(name = "pizza_id", referencedColumnName = "ID"), inverseJoinColumns = @JoinColumn(name = "ordine_id", referencedColumnName = "ID"))
 	private Set<Pizza> pizze = new HashSet<Pizza>();
 
 	public Ordine() {
 	}
 
-	public Ordine(String codice, Date data) {
+	public Ordine(String codice) {
 		this.codice = codice;
-		this.data = data;
 		this.cloded = false;
-		calcolaPrezziPizze();
+		getSommaPrezziPizza();
+	}
+
+	public void getSommaPrezziPizza() {
+		this.costoTotaleOrdine = 0;
+		
+		if (this.pizze == null || this.pizze.isEmpty()) {
+			return;
+		}
+		else {
+			for (Pizza pizza : pizze) {
+				costoTotaleOrdine += pizza.getPrezzoBase();
+			}
+		}
 	}
 
 	public Long getId() {
@@ -150,18 +162,6 @@ public class Ordine {
 	public String toString() {
 		return "Ordine [id=" + id + ", codice=" + codice + ", costoTotaleOrdine=" + costoTotaleOrdine + ", data=" + data
 				+ ", cloded=" + cloded + "]";
-	}
-
-	private void calcolaPrezziPizze() {
-		if (this.pizze == null || this.pizze.isEmpty()) {
-			this.costoTotaleOrdine = 0;
-			return;
-		} else {
-			costoTotaleOrdine = 0;
-			for (Pizza pizza : this.pizze) {
-				costoTotaleOrdine += pizza.getPrezzoBase();
-			}
-		}
 	}
 
 }

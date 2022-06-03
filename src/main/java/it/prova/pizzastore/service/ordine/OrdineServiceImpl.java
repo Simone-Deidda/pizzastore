@@ -128,4 +128,26 @@ public class OrdineServiceImpl implements OrdineService {
 		this.ordineDAO = ordineDAO;
 	}
 
+	@Override
+	public void inizializzaCostoTotaleOrdine(Ordine ordineInstance) throws Exception {
+		EntityManager entityManager = LocalEntityManagerFactoryListener.getEntityManager();
+
+		try {
+			entityManager.getTransaction().begin();
+
+			ordineDAO.setEntityManager(entityManager);
+
+			ordineInstance.setCostoTotaleOrdine(ordineDAO.getSumPrezziPizze(ordineInstance));
+			ordineDAO.update(ordineInstance);;
+
+			entityManager.getTransaction().commit();
+		} catch (Exception e) {
+			entityManager.getTransaction().rollback();
+			e.printStackTrace();
+			throw e;
+		} finally {
+			LocalEntityManagerFactoryListener.closeEntityManager(entityManager);
+		}
+	}
+
 }

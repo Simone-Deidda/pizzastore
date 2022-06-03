@@ -41,7 +41,7 @@ public class OrdineDAOImpl implements OrdineDAO {
 		if (input == null) {
 			throw new Exception("Problema valore in input");
 		}
-		entityManager.persist(input);
+		entityManager.merge(input);
 	}
 
 	@Override
@@ -97,6 +97,13 @@ public class OrdineDAOImpl implements OrdineDAO {
 		}
 
 		return typedQuery.getResultList();
+	}
+
+	@Override
+	public Integer getSumPrezziPizze(Ordine ordineInstance) {
+		TypedQuery<Long> typedQuery = entityManager.createQuery(
+				"select sum(p.prezzoBase) from Ordine o join o.pizze p where o.codice = :codice", Long.class);
+		return typedQuery.setParameter("codice", ordineInstance.getCodice()).getSingleResult().intValue();
 	}
 
 }

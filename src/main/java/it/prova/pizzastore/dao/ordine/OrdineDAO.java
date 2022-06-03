@@ -7,4 +7,6 @@ import it.prova.pizzastore.model.Ordine;
 
 public interface OrdineDAO extends IBaseDAO<Ordine> {
 	public List<Ordine> findByExample(Ordine example);
+
+	public Integer getSumPrezziPizze(Ordine ordineInstance);
 }
