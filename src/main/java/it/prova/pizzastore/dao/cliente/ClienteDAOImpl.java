@@ -18,7 +18,7 @@ public class ClienteDAOImpl implements ClienteDAO {
 
 	@Override
 	public List<Cliente> list() throws Exception {
-		return entityManager.createQuery("from Cliente", Cliente.class).getResultList();
+		return entityManager.createQuery("from Cliente c where c.attivo = 1", Cliente.class).getResultList();
 	}
 
 	@Override
@@ -61,7 +61,7 @@ public class ClienteDAOImpl implements ClienteDAO {
 		Map<String, Object> paramaterMap = new HashMap<String, Object>();
 		List<String> whereClauses = new ArrayList<String>();
 
-		StringBuilder queryBuilder = new StringBuilder("select c from Cliente c where c.id = c.id ");
+		StringBuilder queryBuilder = new StringBuilder("select c from Cliente c where c.attivo = 1 ");
 
 		if (StringUtils.isNotEmpty(example.getNome())) {
 			whereClauses.add(" c.nome  like :nome ");

@@ -23,7 +23,7 @@
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/home">Home</a></li>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareSearchPizzaServlet">Ricerca Pizza</a></li>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareInsertPizzaServlet">Inserisci Pizza</a></li>
-              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareSearchClienteServlet">Ricerca </a></li>
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareSearchClienteServlet">Ricerca Cliente</a></li>
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareInsertClienteServlet">Inserisci Cliente</a></li>
             </ul> 
           </li>   
