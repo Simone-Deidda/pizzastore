@@ -58,7 +58,7 @@
 											<td>
 												<a class="btn  btn-sm btn-outline-secondary" href="ExecuteShowClienteServlet?idCliente=${clienteItem.id }">Visualizza</a>
 												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="PrepareUpdateClienteServlet?idCliente=${clienteItem.id}">Edit</a>
-												<a class="btn btn-outline-danger btn-sm" href="#?idCliente=${clienteItem.id }">Delete</a>
+												<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteClienteServlet?idCliente=${clienteItem.id }">Delete</a>
 											</td>
 										</tr>
 									</c:forEach>
