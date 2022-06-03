@@ -3,6 +3,7 @@ package it.prova.pizzastore.utility;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
+import it.prova.pizzastore.model.Cliente;
 import it.prova.pizzastore.model.Pizza;
 
 public class UtilityForm {
@@ -26,5 +27,19 @@ public class UtilityForm {
 		} else {
 			return true;
 		}
+	}
+
+	public static Cliente initializeClienteFromParams(String nomeParam, String cognomeParam, String indirizzoParam) {
+		Cliente result = new Cliente(nomeParam, cognomeParam, indirizzoParam);
+		return result;
+	}
+
+	public static boolean validateClienteBean(Cliente clienteToBeInserted) {
+		if (clienteToBeInserted == null || StringUtils.isBlank(clienteToBeInserted.getCognome())
+				|| StringUtils.isAllBlank(clienteToBeInserted.getNome())
+				|| StringUtils.isAllBlank(clienteToBeInserted.getIndirizzo())) {
+			return false;
+		}
+		return true;
 	}
 }
