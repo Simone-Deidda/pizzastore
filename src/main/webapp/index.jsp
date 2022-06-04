@@ -71,7 +71,7 @@
 				</div>
 				<div class="jumbotron">
 			      <div class="container">
-			        <p><a class="btn btn-primary btn-lg" href="ExecuteInsertOrdineServlet" role="button">Inserisci nuovo Ordine</a></p>
+			        <p><a class="btn btn-primary btn-lg" href="PrepareInsertOrdineServlet" role="button">Inserisci nuovo Ordine</a></p>
 			      </div>
 				</div>
 				<div class="jumbotron">
@@ -81,6 +81,11 @@
 				</div>
 			  </c:if>
 			  <c:if test="${userInfo.isFattorino()}">
+				  <div class="jumbotron">
+				      <div class="container">
+				        <p><a class="btn btn-primary btn-lg" href="ExecuteListFattorinoServlet?idUser=${userInfo.id}" role="button">Mostra Ordini</a></p>
+				      </div>
+					</div>
               </c:if>
 			</main>
 			

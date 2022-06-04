@@ -12,4 +12,6 @@ public interface OrdineDAO extends IBaseDAO<Ordine> {
 	public Integer getSumPrezziPizze(Ordine ordineInstance);
 
 	public Optional<Ordine> findOneEager(long parseLong);
+
+	public List<Ordine> listAllByUserId(long parseLong);
 }

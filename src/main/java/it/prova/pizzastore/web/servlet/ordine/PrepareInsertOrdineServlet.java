@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import it.prova.pizzastore.model.Ordine;
+import it.prova.pizzastore.model.auth.Ruolo;
 import it.prova.pizzastore.service.MyServiceFactory;
 
 @WebServlet("/PrepareInsertOrdineServlet")
@@ -19,9 +20,12 @@ public class PrepareInsertOrdineServlet extends HttpServlet {
 
 		try {
 			request.setAttribute("insert_ordine_attr", new Ordine());
-			request.setAttribute("utenti_list_attribute", MyServiceFactory.getUtenteServiceInstance().listAll());
+			request.setAttribute("utenti_list_attribute",
+					MyServiceFactory.getUtenteServiceInstance().findByRuolo(MyServiceFactory.getRuoloServiceInstance()
+							.cercaPerDescrizioneECodice("Fattorino User", "FATTORINO_ROLE")));
 			request.setAttribute("pizze_list_attribute", MyServiceFactory.getPizzaServiceInstance().listAllElements());
-			request.setAttribute("clienti_list_attribute", MyServiceFactory.getClienteServiceInstance().listAllElements());
+			request.setAttribute("clienti_list_attribute",
+					MyServiceFactory.getClienteServiceInstance().listAllElements());
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");

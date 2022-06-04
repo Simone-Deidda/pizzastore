@@ -63,7 +63,9 @@
 								    <select class="form-select" id="utente.id" name="utente.id">
 								    	<option value="" selected> -- Selezionare una voce -- </option>
 								      	<c:forEach items="${utenti_list_attribute }" var="utenteItem">
-								      		<option value="${utenteItem.id}" ${insert_ordine_attr.utente.id == utenteItem.id?'selected':''} >${utenteItem.nome } ${utenteItem.cognome }</option>
+								      		<option value="${utenteItem.id}" 
+								      		${insert_ordine_attr.utente.id == utenteItem.id?'selected':''} >
+								      		${utenteItem.nome } ${utenteItem.cognome }</option>
 								      	</c:forEach>
 								    </select>
 								</div>

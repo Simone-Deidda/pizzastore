@@ -113,4 +113,9 @@ public class OrdineDAOImpl implements OrdineDAO {
 				.setParameter("idOrdine", parseLong).getResultList().stream().findFirst();
 	}
 
+	@Override
+	public List<Ordine> listAllByUserId(long parseLong) {
+		return entityManager.createQuery("select o from Ordine o left join o.utente u where o.cloded = 0 and u.id = :idUtente", Ordine.class).setParameter("idUtente", parseLong).getResultList();
+	}
+
 }

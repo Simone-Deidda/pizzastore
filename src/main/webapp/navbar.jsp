@@ -33,6 +33,8 @@
 	              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareInsertOrdineServlet">Inserisci Ordine</a></li>
               </c:if>
               <c:if test="${userInfo.isFattorino()}">
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/ExecuteListFattorinoServlet?idUser=${userInfo.id}">Mostra Ordini</a></li>
+              
               </c:if>
             </ul> 
           </li>   

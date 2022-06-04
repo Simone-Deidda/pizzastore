@@ -65,7 +65,7 @@ public class UtilityForm {
 		}
 		if (NumberUtils.isCreatable(utenteIdParam)) {
 			Utente utente = new Utente();
-			utente.setId(Long.parseLong(clienteIdParam));
+			utente.setId(Long.parseLong(utenteIdParam));
 			result.setUtente(utente);
 		}
 

@@ -26,4 +26,6 @@ public interface OrdineService {
 
 	public Ordine caricaSingoloElementoEager(long parseLong);
 
+	public List<Ordine> listAllByUserId(long parseLong) throws Exception;
+
 }
