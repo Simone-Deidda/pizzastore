@@ -136,5 +136,20 @@ public class Utente {
 		}
 		return false;
 	}
+	
+	public boolean isPizzaiolo() {
+		for (Ruolo ruoloItem : ruoli) {
+			if (ruoloItem.getCodice().equals(Ruolo.PIZZAIOLO_ROLE))
+				return true;
+		}
+		return false;
+	}
 
+	public boolean isFattorino() {
+		for (Ruolo ruoloItem : ruoli) {
+			if (ruoloItem.getCodice().equals(Ruolo.FATTORINO_ROLE))
+				return true;
+		}
+		return false;
+	}
 }
