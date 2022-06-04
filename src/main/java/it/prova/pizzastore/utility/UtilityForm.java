@@ -71,8 +71,10 @@ public class UtilityForm {
 
 		Set<Pizza> listaPizze = new HashSet<Pizza>();
 
-		if (pizzeIdParam.length != 0) {
+		if (pizzeIdParam == null || pizzeIdParam.length == 0) {
+			result.setPizze(null);
 
+		} else {
 			for (String idPizza : pizzeIdParam) {
 				if (NumberUtils.isCreatable(idPizza)) {
 					listaPizze.add(
@@ -82,8 +84,6 @@ public class UtilityForm {
 
 			}
 			result.setPizze(listaPizze);
-		} else {
-			result.setPizze(null);
 		}
 
 		return result;
