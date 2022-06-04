@@ -49,7 +49,8 @@ public class OrdineDAOImpl implements OrdineDAO {
 		if (input == null) {
 			throw new Exception("Problema valore in input");
 		}
-		entityManager.remove(entityManager.merge(input));
+		input.setCloded(true);
+		entityManager.merge(input);
 	}
 
 	@Override
@@ -108,7 +109,7 @@ public class OrdineDAOImpl implements OrdineDAO {
 
 	@Override
 	public Optional<Ordine> findOneEager(long parseLong) {
-		return entityManager.createQuery("from Ordine o left join fetch o.cliente where o.id=:idOrdine", Ordine.class)
+		return entityManager.createQuery("select o from Ordine o left join fetch o.cliente c left join fetch o.utente u where o.id=:idOrdine", Ordine.class)
 				.setParameter("idOrdine", parseLong).getResultList().stream().findFirst();
 	}
 

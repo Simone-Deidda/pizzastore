@@ -30,6 +30,14 @@ public class PrepareDeletePizzaServlet extends HttpServlet {
 
 		try {
 			pizza = MyServiceFactory.getPizzaServiceInstance().caricaSingoloElemento(Long.parseLong(idPizzaParam));
+			
+			if (pizza == null) {
+				request.setAttribute("errorMessage", "Elemento non trovato.");
+				request.getRequestDispatcher("ExecuteListPizzaServlet?operationResult=NOT_FOUND").forward(request,
+						response);
+				return;
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

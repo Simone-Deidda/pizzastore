@@ -12,13 +12,11 @@ import org.apache.commons.lang3.math.NumberUtils;
 import it.prova.pizzastore.model.Ordine;
 import it.prova.pizzastore.service.MyServiceFactory;
 
-
-@WebServlet("/ExecuteShowOrdineServlet")
-public class ExecuteShowOrdineServlet extends HttpServlet {
+@WebServlet("/PrepareDeleteOrdineServlet")
+public class PrepareDeleteOrdineServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+       
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		String idOrdineParam = request.getParameter("idOrdine");
 
@@ -39,7 +37,7 @@ public class ExecuteShowOrdineServlet extends HttpServlet {
 				return;
 			}
 
-			request.setAttribute("show_ordine_attr", ordineInstance);
+			request.setAttribute("delete_ordine_attr", ordineInstance);
 		} catch (Exception e) {
 			e.printStackTrace();
 			request.setAttribute("errorMessage", "Attenzione si è verificato un errore.");
@@ -47,7 +45,7 @@ public class ExecuteShowOrdineServlet extends HttpServlet {
 			return;
 		}
 
-		request.getRequestDispatcher("/ordine/show.jsp").forward(request, response);
+		request.getRequestDispatcher("/ordine/delete.jsp").forward(request, response);
 	}
 
 }
