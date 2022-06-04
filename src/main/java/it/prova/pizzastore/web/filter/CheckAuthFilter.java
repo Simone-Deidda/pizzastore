@@ -23,9 +23,7 @@ public class CheckAuthFilter extends HttpFilter implements Filter {
 	private static final String[] EXCLUDED_URLS = { "login.jsp", "/LoginServlet", "/LogoutServlet", "/css/", "/js/" };
 	private static final String[] ADMIN_URLS = { "/cliente/", "index.jsp" };
 	private static final String[] PIZZAIOLO_URLS = { "/ordine/", "/pizza/", "index.jsp"};
-	private static final String[] FATTORINO_URLS = {"index.jsp", "ExecuteFattorinoListServlet",
-			"/fattorino/list.jsp", "PrepareFattorinoDeleteServlet", "ExecuteFattorinoDeleteServlet", "ExecuteFattorinoShowServlet",
-			"/fattorino/delete.jsp", "/fattorino/show.jsp" };
+	private static final String[] FATTORINO_URLS = {"index.jsp", "/fattorino/"};
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {

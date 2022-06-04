@@ -12,7 +12,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 import it.prova.pizzastore.model.Ordine;
 import it.prova.pizzastore.service.MyServiceFactory;
 
-@WebServlet("/PrepareDeleteOrdineServlet")
+@WebServlet(name = "/ordine/PrepareDeleteOrdineServlet", urlPatterns = {"/ordine/PrepareDeleteOrdineServlet"})
 public class PrepareDeleteOrdineServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

@@ -23,17 +23,17 @@
             <ul class="dropdown-menu" aria-labelledby="dropdown07">
               <li><a class="dropdown-item" href="${pageContext.request.contextPath}/home">Home</a></li>
               <c:if test="${userInfo.isAdmin()}">
-	              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareSearchClienteServlet">Ricerca Cliente</a></li>
-	              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareInsertClienteServlet">Inserisci Cliente</a></li>
+	              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cliente/PrepareSearchClienteServlet">Ricerca Cliente</a></li>
+	              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/cliente/PrepareInsertClienteServlet">Inserisci Cliente</a></li>
               </c:if>
               <c:if test="${userInfo.isPizzaiolo()}">
-	              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareSearchPizzaServlet">Ricerca Pizza</a></li>
-	              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareInsertPizzaServlet">Inserisci Pizza</a></li>
-	              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareSearchOrdineServlet">Ricerca Ordine</a></li>
-	              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/PrepareInsertOrdineServlet">Inserisci Ordine</a></li>
+	              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/pizza/PrepareSearchPizzaServlet">Ricerca Pizza</a></li>
+	              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/pizza/PrepareInsertPizzaServlet">Inserisci Pizza</a></li>
+	              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/ordine/PrepareSearchOrdineServlet">Ricerca Ordine</a></li>
+	              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/ordine/PrepareInsertOrdineServlet">Inserisci Ordine</a></li>
               </c:if>
               <c:if test="${userInfo.isFattorino()}">
-              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/ExecuteListFattorinoServlet?idUser=${userInfo.id}">Mostra Ordini</a></li>
+              <li><a class="dropdown-item" href="${pageContext.request.contextPath}/fattorino/ExecuteListFattorinoServlet?idUser=${userInfo.id}">Mostra Ordini</a></li>
               
               </c:if>
             </ul> 

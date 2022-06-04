@@ -12,7 +12,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 import it.prova.pizzastore.model.Cliente;
 import it.prova.pizzastore.service.MyServiceFactory;
 
-@WebServlet("/ExecuteShowClienteServlet")
+@WebServlet(name = "/cliente/ExecuteShowClienteServlet", urlPatterns = {"/cliente/ExecuteShowClienteServlet"})
 public class ExecuteShowClienteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

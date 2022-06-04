@@ -83,7 +83,7 @@
 			  <c:if test="${userInfo.isFattorino()}">
 				  <div class="jumbotron">
 				      <div class="container">
-				        <p><a class="btn btn-primary btn-lg" href="ExecuteListFattorinoServlet?idUser=${userInfo.id}" role="button">Mostra Ordini</a></p>
+				        <p><a class="btn btn-primary btn-lg" href="${pageContext.request.contextPath}/fattorino/ExecuteListFattorinoServlet?idUser=${userInfo.id}" role="button">Mostra Ordini</a></p>
 				      </div>
 					</div>
               </c:if>

@@ -11,7 +11,7 @@ import it.prova.pizzastore.model.Ordine;
 import it.prova.pizzastore.service.MyServiceFactory;
 import it.prova.pizzastore.utility.UtilityForm;
 
-@WebServlet("/ExecuteSearchOrdineServlet")
+@WebServlet(name = "/ordine/ExecuteSearchOrdineServlet", urlPatterns = {"/ordine/ExecuteSearchOrdineServlet"})
 public class ExecuteSearchOrdineServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

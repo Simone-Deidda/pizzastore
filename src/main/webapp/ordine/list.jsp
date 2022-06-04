@@ -37,7 +37,7 @@
 				        <h5>Lista dei risultati</h5> 
 				    </div>
 				    <div class='card-body'>
-				    	<a class="btn btn-primary " href="PrepareInsertOrdineServlet">Add New</a>
+				    	<a class="btn btn-primary " href="${pageContext.request.contextPath}/ordine/PrepareInsertOrdineServlet">Add New</a>
 				    
 				        <div class='table-responsive'>
 				            <table class='table table-striped ' >
@@ -58,9 +58,9 @@
 											<td>
 											 
 											
-												<a class="btn  btn-sm btn-outline-secondary" href="ExecuteShowOrdineServlet?idOrdine=${ordineItem.id }">Visualizza</a>
-												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="PrepareUpdateOrdineServlet?idOrdine=${ordineItem.id}">Edit</a>
-												<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteOrdineServlet?idOrdine=${ordineItem.id }">Delete</a>
+												<a class="btn  btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/ordine/ExecuteShowOrdineServlet?idOrdine=${ordineItem.id }">Visualizza</a>
+												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="${pageContext.request.contextPath}/ordine/PrepareUpdateOrdineServlet?idOrdine=${ordineItem.id}">Edit</a>
+												<a class="btn btn-outline-danger btn-sm" href="${pageContext.request.contextPath}/ordine/PrepareDeleteOrdineServlet?idOrdine=${ordineItem.id }">Delete</a>
 											</td>
 										</tr>
 									</c:forEach>

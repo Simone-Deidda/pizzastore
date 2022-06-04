@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import it.prova.pizzastore.service.MyServiceFactory;
 
-@WebServlet("/PrepareSearchOrdineServlet")
+@WebServlet(name = "/ordine/PrepareSearchOrdineServlet", urlPatterns = {"/ordine/PrepareSearchOrdineServlet"})
 public class PrepareSearchOrdineServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

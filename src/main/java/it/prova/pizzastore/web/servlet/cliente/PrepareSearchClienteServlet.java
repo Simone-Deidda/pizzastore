@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/PrepareSearchClienteServlet")
+@WebServlet(name = "/cliente/PrepareSearchClienteServlet", urlPatterns = {"/cliente/PrepareSearchClienteServlet"})
 public class PrepareSearchClienteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

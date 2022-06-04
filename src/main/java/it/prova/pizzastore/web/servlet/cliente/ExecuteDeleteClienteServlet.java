@@ -11,7 +11,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 
 import it.prova.pizzastore.service.MyServiceFactory;
 
-@WebServlet("/ExecuteDeleteClienteServlet")
+@WebServlet(name = "/cliente/ExecuteDeleteClienteServlet", urlPatterns = {"/cliente/ExecuteDeleteClienteServlet"})
 public class ExecuteDeleteClienteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

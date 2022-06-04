@@ -36,7 +36,7 @@
 				    </div>
 				    <div class='card-body'>
 		
-							<form method="post" action="ExecuteSearchPizzaServlet" class="row g-3" novalidate="novalidate">
+							<form method="post" action="${pageContext.request.contextPath}/pizza/ExecuteSearchPizzaServlet" class="row g-3" novalidate="novalidate">
 							
 								<div class="col-md-6">
 									<label for="nome" class="form-label">Nome</label>

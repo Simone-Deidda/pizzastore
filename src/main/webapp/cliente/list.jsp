@@ -37,7 +37,7 @@
 				        <h5>Lista dei risultati</h5> 
 				    </div>
 				    <div class='card-body'>
-				    	<a class="btn btn-primary " href="PrepareInsertClienteServlet">Add New</a>
+				    	<a class="btn btn-primary " href="${pageContext.request.contextPath}/cliente/PrepareInsertClienteServlet">Add New</a>
 				    
 				        <div class='table-responsive'>
 				            <table class='table table-striped ' >
@@ -56,9 +56,9 @@
 											<td>${clienteItem.cognome }</td>
 											<td>${clienteItem.indirizzo }</td>
 											<td>
-												<a class="btn  btn-sm btn-outline-secondary" href="ExecuteShowClienteServlet?idCliente=${clienteItem.id }">Visualizza</a>
-												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="PrepareUpdateClienteServlet?idCliente=${clienteItem.id}">Edit</a>
-												<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteClienteServlet?idCliente=${clienteItem.id }">Delete</a>
+												<a class="btn  btn-sm btn-outline-secondary" href="${pageContext.request.contextPath}/cliente/ExecuteShowClienteServlet?idCliente=${clienteItem.id }">Visualizza</a>
+												<a class="btn  btn-sm btn-outline-primary ml-2 mr-2" href="${pageContext.request.contextPath}/cliente/PrepareUpdateClienteServlet?idCliente=${clienteItem.id}">Edit</a>
+												<a class="btn btn-outline-danger btn-sm" href="${pageContext.request.contextPath}/cliente/PrepareDeleteClienteServlet?idCliente=${clienteItem.id }">Delete</a>
 											</td>
 										</tr>
 									</c:forEach>

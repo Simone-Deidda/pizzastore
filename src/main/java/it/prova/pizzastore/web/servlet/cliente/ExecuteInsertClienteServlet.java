@@ -11,7 +11,7 @@ import it.prova.pizzastore.model.Cliente;
 import it.prova.pizzastore.service.MyServiceFactory;
 import it.prova.pizzastore.utility.UtilityForm;
 
-@WebServlet("/ExecuteInsertClienteServlet")
+@WebServlet(name = "/cliente/ExecuteInsertClienteServlet", urlPatterns = {"/cliente/ExecuteInsertClienteServlet"})
 public class ExecuteInsertClienteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

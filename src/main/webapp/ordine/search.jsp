@@ -36,7 +36,7 @@
 				    </div>
 				    <div class='card-body'>
 		
-							<form method="post" action="ExecuteSearchOrdineServlet" class="row g-3" novalidate="novalidate">
+							<form method="post" action="${pageContext.request.contextPath}/ordine/ExecuteSearchOrdineServlet" class="row g-3" novalidate="novalidate">
 							
 								<div class="col-md-6">
 									<label for="codice" class="form-label">Codice</label>

@@ -13,7 +13,7 @@ import it.prova.pizzastore.model.Pizza;
 import it.prova.pizzastore.service.MyServiceFactory;
 import it.prova.pizzastore.utility.UtilityForm;
 
-@WebServlet("/ExecuteUpdatePizzaServlet")
+@WebServlet(name = "/pizza/ExecuteUpdatePizzaServlet", urlPatterns = {"/pizza/ExecuteUpdatePizzaServlet"})
 public class ExecuteUpdatePizzaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

@@ -12,7 +12,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 import it.prova.pizzastore.model.Cliente;
 import it.prova.pizzastore.service.MyServiceFactory;
 
-@WebServlet("/PrepareUpdateClienteServlet")
+@WebServlet(name = "/cliente/PrepareUpdateClienteServlet", urlPatterns = {"/cliente/PrepareUpdateClienteServlet"})
 public class PrepareUpdateClienteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

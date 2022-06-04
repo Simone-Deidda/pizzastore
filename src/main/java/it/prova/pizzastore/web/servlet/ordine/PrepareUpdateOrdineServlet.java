@@ -11,7 +11,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 
 import it.prova.pizzastore.service.MyServiceFactory;
 
-@WebServlet("/PrepareUpdateOrdineServlet")
+@WebServlet(name = "/ordine/PrepareUpdateOrdineServlet", urlPatterns = {"/ordine/PrepareUpdateOrdineServlet"})
 public class PrepareUpdateOrdineServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

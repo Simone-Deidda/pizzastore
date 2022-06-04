@@ -8,10 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import it.prova.pizzastore.model.Ordine;
-import it.prova.pizzastore.model.auth.Ruolo;
 import it.prova.pizzastore.service.MyServiceFactory;
 
-@WebServlet("/PrepareInsertOrdineServlet")
+@WebServlet(name = "/ordine/PrepareInsertOrdineServlet", urlPatterns = {"/ordine/PrepareInsertOrdineServlet"})
 public class PrepareInsertOrdineServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

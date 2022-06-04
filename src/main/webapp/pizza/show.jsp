@@ -57,7 +57,7 @@
 					    </div>
 					    
 					    <div class='card-footer'>
-					        <a href="ExecuteListPizzaServlet" class='btn btn-outline-secondary' style='width:80px'>
+					        <a href="${pageContext.request.contextPath}/pizza/ExecuteListPizzaServlet" class='btn btn-outline-secondary' style='width:80px'>
 					            <i class='fa fa-chevron-left'></i> Back
 					        </a>
 					    </div>

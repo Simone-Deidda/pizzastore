@@ -12,10 +12,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 import it.prova.pizzastore.model.Ordine;
 import it.prova.pizzastore.service.MyServiceFactory;
 
-/**
- * Servlet implementation class ExecuteFattorinoShowServlet
- */
-@WebServlet("/ExecuteFattorinoShowServlet")
+@WebServlet(name = "/fattorino/ExecuteFattorinoShowServlet", urlPatterns = { "/fattorino/ExecuteFattorinoShowServlet" })
 public class ExecuteFattorinoShowServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

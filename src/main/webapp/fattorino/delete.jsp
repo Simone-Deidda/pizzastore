@@ -74,11 +74,11 @@
 					    	
 					    <!-- end card body -->
 					    <div class='card-footer'>
-					    	<form action="ExecuteDeleteFattorinoServlet" method="post">
+					    	<form action="${pageContext.request.contextPath}/fattorino/ExecuteDeleteFattorinoServlet" method="post">
 					    		<input type="hidden" name="idOrdine" value="${delete_ordine_attr.id}">
 					    		<input type="hidden" name="idOrdine" value="${userInfo.id}">
 						    	<button type="submit" name="submit" id="submit" class="btn btn-danger">Conferma</button>
-						        <a href="ExecuteListFattorinoServlet?idUser=${userInfo.id}" class='btn btn-outline-secondary' style='width:80px'>
+						        <a href="${pageContext.request.contextPath}/fattorino/ExecuteListFattorinoServlet?idUser=${userInfo.id}" class='btn btn-outline-secondary' style='width:80px'>
 						            <i class='fa fa-chevron-left'></i> Back
 						        </a>
 					        </form>

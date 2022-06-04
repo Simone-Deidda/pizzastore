@@ -56,10 +56,10 @@
 					    	
 					    <!-- end card body -->
 					    <div class='card-footer'>
-					    	<form action="ExecuteDeletePizzaServlet" method="post">
+					    	<form action="${pageContext.request.contextPath}/pizza/ExecuteDeletePizzaServlet" method="post">
 					    		<input type="hidden" name="idPizza" value="${delete_pizza_attr.id}">
 						    	<button type="submit" name="submit" id="submit" class="btn btn-danger">Conferma</button>
-						        <a href="ExecuteListPizzaServlet" class='btn btn-outline-secondary' style='width:80px'>
+						        <a href="${pageContext.request.contextPath}/pizza/ExecuteListPizzaServlet" class='btn btn-outline-secondary' style='width:80px'>
 						            <i class='fa fa-chevron-left'></i> Back
 						        </a>
 					        </form>

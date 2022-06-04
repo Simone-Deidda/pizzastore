@@ -11,7 +11,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import it.prova.pizzastore.service.MyServiceFactory;
 
-@WebServlet("/ExecuteListClienteServlet")
+@WebServlet(name = "/cliente/ExecuteListClienteServlet", urlPatterns = {"/cliente/ExecuteListClienteServlet"})
 public class ExecuteListClienteServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
