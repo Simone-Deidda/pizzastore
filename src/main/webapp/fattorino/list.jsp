@@ -58,7 +58,7 @@
 											 
 											
 												<a class="btn  btn-sm btn-outline-secondary" href="ExecuteFattorinoShowServlet?idOrdine=${ordineItem.id }">Visualizza</a>
-												<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteOrdineServlet?idOrdine=${ordineItem.id }">Delete</a>
+												<a class="btn btn-outline-danger btn-sm" href="PrepareDeleteFattorinoServlet?idOrdine=${ordineItem.id }">Delete</a>
 											</td>
 										</tr>
 									</c:forEach>
